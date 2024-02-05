@@ -23,7 +23,7 @@
             <span></span>
             <span></span>
             &nbsp;</button><br><br>
-          <button id="pause">Start</button>
+          <button id="pause" onclick="startGame()">Start</button>
           <button id="restart">Restart</button>
           <button id="instructions">Instructions</button>
         </div>
@@ -42,6 +42,12 @@
           Touchscreens not supported :-)
         </p>
       </div>
+      
+        <div class="range_wrapper">Difficulty&nbsp;&nbsp;
+          <input id="theValue" type="range" min="5" max="25" oninput="showVal(this.value/5)" onchange="showVal(this.value/5)" step="5" value="15">
+          <div id="valBox" class="valBox">3</div>
+         </div>
+         
     </div>
     <noscript>No playing Snake without JavaScript enabled :-)</noscript>
     <script src="snake.js"></script>

@@ -52,7 +52,17 @@ let animation;
 let highscore = 0;
 let score = 0;
 let level = 1;
-let fps = 15;
+let fps=15;
+//slider
+function showVal(val) {  
+    document.getElementById("valBox").innerHTML = val;
+    console.log(fps);
+    updateFps();
+}
+function updateFps(){
+    fps = document.getElementById("theValue").value;
+}
+//let fps = document.getElementById("valBox").innerHTML;
 let lastKeyPress = new Date();
 let currentDirections = [39];
 
@@ -67,6 +77,7 @@ function startGame() {
   putFood();
   drawSnake();
   gameInterval = window.setInterval(autoMove, 1000 / fps);
+  console.log(fps);
 }
 
 function autoMove() {
@@ -235,8 +246,7 @@ function gameOver() {
   }
 }
 
-startGame();
-
+//startGame();
 
 function toggle_light_mode() {
     var app = document.getElementsByTagName("BODY")[0];
@@ -260,3 +270,5 @@ window.addEventListener(
     },
     false
 );
+
+
